@@ -1,5 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Presenter from 'microcosm/addons/presenter'
+import Repo from './repo'
 import App from './App'
+import './index.css'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const repo = new Repo()
+
+ReactDOM.render((
+  <Presenter repo={repo}>
+    <App />
+  </Presenter>
+), document.getElementById('root'))
